@@ -4,7 +4,8 @@
 // return int values.
 
 public class Algebra {
-	public static void main(String args[]) {
+	public static void main(String args[]) 
+	{
 	    // Tests some of the operations
 	    System.out.println(plus(2,3));   // 2 + 3
 	    System.out.println(minus(7,2));  // 7 - 2
@@ -24,44 +25,87 @@ public class Algebra {
 	}  
 
 	// Returns x1 + x2
-	public static int plus(int x1, int x2) {
+	public static int plus(int x1, int x2) 
+	{
 		// Replace the following statement with your code
-		return 0;
+		for (int i=0; i<x2; i++)
+		{
+			x1++;
+		}
+		return x1;
 	}
 
 	// Returns x1 - x2
-	public static int minus(int x1, int x2) {
+	public static int minus(int x1, int x2) 
+	{
 		// Replace the following statement with your code
-		return 0;
+		for (int i=0; i<x2; i++)
+		{
+			x1--;
+		}
+		return x1;
 	}
 
 	// Returns x1 * x2
-	public static int times(int x1, int x2) {
+	public static int times(int x1, int x2) 
+	{
 		// Replace the following statement with your code
-		return 0;
+		int x3 = x2;
+		for (int i=0; i<x1-1; i++)
+		{
+			x2=plus(x2, x3);
+		}
+		return x2;
 	}
 
 	// Returns x^n (for n >= 0)
-	public static int pow(int x, int n) {
+	public static int pow(int x, int n) 
+	{
+		int x3 = x;
+		for (int i=0; i<n-1; i++)
+		{
+			x = times(x, x3);
+		}
 		// Replace the following statement with your code
-		return 0;
+		return x;
 	}
 
 	// Returns the integer part of x1 / x2 
-	public static int div(int x1, int x2) {
+	public static int div(int x1, int x2) 
+	{
 		// Replace the following statement with your code
-		return 0;
+		int counter = 0;
+		while (x1 != 0 && x1>0 && x1>=x2)
+		{
+			x1 = minus(x1, x2);
+			counter++;
+		}
+		return counter;
 	}
 
 	// Returns x1 % x2
-	public static int mod(int x1, int x2) {
+	public static int mod(int x1, int x2) 
+	{
 		// Replace the following statement with your code
-		return 0;
+		while (x1>=x2)
+		{
+			x1 = minus(x1, x2);
+		}
+		
+		return x1;
 	}	
 
 	// Returns the integer part of sqrt(x) 
-	public static int sqrt(int x) {
+	public static int sqrt(int x) 
+	{
 		// Replace the following statement with your code
-		return 0;
+		int x1 = 0 ;
+		int multiple = 1 ;
+		while (multiple <= x)
+		{
+			x1++;
+			multiple = times(x1, x1);
+		}
+		return x1;
 	}	  	  
 }
